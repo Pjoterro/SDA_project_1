@@ -1,10 +1,41 @@
 package dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "employee")
 
 public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false, length = 100)
+    private String firstName;
+
+    @Column(nullable = false, length = 100)
+    private String lastName;
+
+    @Enumerated(value = EnumType.STRING)
+    private Position position;
+
+    private LocalDate birthDate;
+
+    @Column(scale = 2)
+    private BigDecimal salary;
+
+    public Employee() {
+    }
+
+    public Employee(Integer id, String firstName, String lastName, Position position, LocalDate birthDate, BigDecimal salary) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.position = position;
+        this.birthDate = birthDate;
+        this.salary = salary;
+    }
 }

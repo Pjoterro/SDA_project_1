@@ -6,8 +6,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" /> --> <!-- Obecnie JDBC automatycznie wykrywa -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_sda?serverTimezone=Europe/Warsaw" />
-            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sda_project?serverTimezone=Europe/Warsaw" />
+            <property name="javax.persistence.jdbc.user" value="sda_project_owner" />
             <property name="javax.persistence.jdbc.password" value="password" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
             <property name="hibernate.hbm2ddl.auto" value="create" /> <!-- Sposób generowania schematu DDL -->
