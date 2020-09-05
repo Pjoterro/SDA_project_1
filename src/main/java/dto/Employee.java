@@ -37,4 +37,16 @@ public class Employee {
         this.birthDate = birthDate;
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", position=" + position +
+                ", birthDate=" + birthDate +
+                ", salary=" + salary +
+                '}';
+    }
 }

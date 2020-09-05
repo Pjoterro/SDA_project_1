@@ -4,6 +4,7 @@ public enum Position {
     JUNIOR_DEVELOPER,
     DEVELOPER,
     SENIOR_DEVELOPER,
-    MANAGER
+    MANAGER,
+    NONE
 
 }
