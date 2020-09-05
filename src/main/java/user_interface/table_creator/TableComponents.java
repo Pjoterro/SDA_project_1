@@ -6,15 +6,15 @@ public class TableComponents {
 
     public static String tableHeader() {
         String header =
-                "+----+-----------------+-----------------+-----------------+--------------+--------+\n" +
-                "| ID | Imie            | Nazwisko        | Stanowisko      | Data urodzin | Pensja |\n" +
-                "+----+-----------------+-----------------+-----------------+--------------+--------+";
+                "+----+-----------------+-----------------+-----------------+--------------+----------+\n" +
+                "| ID | Imie            | Nazwisko        | Stanowisko      | Data urodzin | Pensja   |\n" +
+                "+----+-----------------+-----------------+-----------------+--------------+----------+";
         return header;
     }
 
     public static String tableInterline() {
         String bottom =
-                "+----+-----------------+-----------------+-----------------+--------------+--------+";
+                "+----+-----------------+-----------------+-----------------+--------------+----------+";
         return bottom;
     }
 
@@ -32,7 +32,7 @@ public class TableComponents {
         record.append(emp.getBirthDate());
         record.append("   | ");
         record.append(emp.getSalary().toString());
-        record.append("   |");
+        record.append("  |");
         return record.toString();
     }
 
