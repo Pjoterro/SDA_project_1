@@ -30,8 +30,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String firstName, String lastName, Position position, LocalDate birthDate, BigDecimal salary) {
-        this.id = id;
+    public Employee(String firstName, String lastName, Position position, LocalDate birthDate, BigDecimal salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
