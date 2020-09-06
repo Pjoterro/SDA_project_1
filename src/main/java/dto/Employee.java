@@ -42,6 +42,7 @@ public class Employee {
         this.birthDate = birthDate;
         this.salary = salary;
         this.position = position;
+        //this.items = Item.createDefaultItemList(); //TODO: rework
     }
 
     @Override

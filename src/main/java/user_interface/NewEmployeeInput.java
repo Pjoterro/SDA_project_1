@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class NewEmployeeInput {
 
-    private Employee employee;
+    private Employee employee; //TODO: sprawdzic czy dziala bez tego
 
     public static Employee createNewEmployee() {
         Scanner scn = new Scanner(System.in);

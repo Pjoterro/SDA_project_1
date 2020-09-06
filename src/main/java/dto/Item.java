@@ -18,4 +18,10 @@ public class Item {
 
     @Column(length = 100)
     private String description;
+
+    public Item(Employee owner, String name, String description) {
+        this.owner = owner;
+        this.name = name;
+        this.description = description;
+    }
 }
