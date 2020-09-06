@@ -6,15 +6,15 @@ public class TableComponents {
 
     public static String tableHeader() {
         String header =
-                "+----+-----------------+-----------------+-----------------+--------------+----------+\n" +
-                "| ID | Imie            | Nazwisko        | Stanowisko      | Data urodzin | Pensja   |\n" +
-                "+----+-----------------+-----------------+-----------------+--------------+----------+";
+                "+----+----------------------+----------------------+----------------------+--------------+------------+\n" +
+                "| ID | Imie                 | Nazwisko             | Stanowisko           | Data urodzin | Pensja     |\n" +
+                "+----+----------------------+----------------------+----------------------+--------------+------------+";
         return header;
     }
 
     public static String tableInterline() {
         String bottom =
-                "+----+-----------------+-----------------+-----------------+--------------+----------+";
+                "+----+----------------------+----------------------+----------------------+--------------+------------+";
         return bottom;
     }
 
@@ -24,21 +24,21 @@ public class TableComponents {
         record.append(emp.getId());
         record.append("  | ");
         record.append(emp.getFirstName());
-        record.append(generateSeparator(emp.getFirstName()));
+        record.append(generateSeparator(20, emp.getFirstName()));
         record.append(emp.getLastName());
-        record.append(generateSeparator(emp.getLastName()));
+        record.append(generateSeparator(20, emp.getLastName()));
         record.append(emp.getPosition());
-        record.append(generateSeparator(emp.getPosition()));
+        record.append(generateSeparator(20, emp.getPosition()));
         record.append(emp.getBirthDate());
         record.append("   | ");
         record.append(emp.getSalary().toString());
-        record.append("  |");
+        record.append(generateSeparator(10, emp.getSalary().toString()));
         return record.toString();
     }
 
-    public static String generateSeparator(String str) {
+    public static String generateSeparator(int spaceNumber, String str) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < 15-str.length(); i++) {
+        for (int i = 0; i < spaceNumber-str.length(); i++) {
             result.append(" ");
         }
         result.append(" | ");
