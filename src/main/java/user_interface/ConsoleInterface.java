@@ -21,7 +21,7 @@ public class ConsoleInterface {
 
             switch (chosenOption) {
                 case 1:
-                    EmployeeTablePrint.printEmployee();
+                    EmployeeTablePrint.printEmployees();
                     break;
                 case 2:
                     employeeDAO.addEmployee(NewEmployeeInput.createNewEmployee());
@@ -29,12 +29,12 @@ public class ConsoleInterface {
                 case 3:
                     System.out.print("Wpisz ID szukanego pracownika: ");
                     chosenOption = Integer.parseInt(scn.nextLine());
-                    System.out.println(employeeDAO.getEmployee(chosenOption).toString());
+                    EmployeeTablePrint.printSingleEmployee(employeeDAO.getEmployee(chosenOption));
                     break;
                 case 4:
                     System.out.print("Wpisz ID pracownika ktorego dane chcesz zmienic: ");
                     chosenOption = Integer.parseInt(scn.nextLine());
-                    System.out.println(employeeDAO.getEmployee(chosenOption).toString());
+                    EmployeeTablePrint.printSingleEmployee(employeeDAO.getEmployee(chosenOption));
                     System.out.println("Wpisz zaktualizowane dane pracownika: ");
                     Employee newEmp = NewEmployeeInput.createNewEmployee();
                     employeeDAO.updateEmployee(chosenOption, newEmp);

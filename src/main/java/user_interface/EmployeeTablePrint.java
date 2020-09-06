@@ -8,7 +8,7 @@ import java.util.List;
 
 public class EmployeeTablePrint {
 
-    public static void printEmployee() {
+    public static void printEmployees() {
         EmployeeDAO employeeDAO = new EmployeeDAO();
         List<Employee> empList = employeeDAO.getAll();
         System.out.println(TableComponents.tableHeader());
@@ -18,4 +18,9 @@ public class EmployeeTablePrint {
         }
     }
 
+    public static void printSingleEmployee(Employee emp) {
+        System.out.println(TableComponents.tableHeader());
+        System.out.println(TableComponents.empRecord(emp));
+        System.out.println(TableComponents.tableInterline());
+    }
 }
