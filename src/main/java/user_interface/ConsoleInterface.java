@@ -42,7 +42,10 @@ public class ConsoleInterface {
                 case 5:
                     System.out.println("Wpisz ID pracownika ktorego chcesz usunac: ");
                     chosenOption = Integer.parseInt(scn.nextLine());
-                    employeeDAO.deleteEmployee(chosenOption);
+                    int parseInt = chosenOption;
+                    employeeDAO.deleteEmployee(parseInt);
+                    break;
+                case 0:
                     break;
                 default:
                     System.out.println("Nie ma takiej opcji");

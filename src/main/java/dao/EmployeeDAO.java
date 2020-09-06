@@ -3,6 +3,7 @@ package dao;
 import dto.Employee;
 
 import javax.persistence.EntityManager;
+import java.time.LocalDate;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -36,7 +37,10 @@ public class EmployeeDAO {
         EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         Employee employee = entityManager.find(Employee.class, id);
-//        entityManager.setProperty(...);
+        employee.setFirstName(emp.getFirstName());
+        employee.setLastName(emp.getLastName());
+        employee.setBirthDate(LocalDate.parse(emp.getBirthDate()));
+        employee.setSalary(emp.getSalary());
         entityManager.getTransaction().commit();
         entityManager.close();
     }
@@ -44,9 +48,8 @@ public class EmployeeDAO {
     public void deleteEmployee(int id) {
         EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
-        entityManager.remove(id);
+        entityManager.remove(entityManager.find(Employee.class, id));
         entityManager.getTransaction().commit();
         entityManager.close();
-
     }
 }
