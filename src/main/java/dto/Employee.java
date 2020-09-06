@@ -50,6 +50,17 @@ public class Employee {
                 '}';
     }
 
+    public boolean isEqual(Employee emp) {
+        return (
+                this.firstName.equals(emp.getFirstName()) &&
+                        this.lastName.equals(emp.getLastName()) &&
+                        this.birthDate.isEqual(LocalDate.parse(emp.getBirthDate())) &&
+                        this.position.compareTo(Position.valueOf(emp.getPosition())) == 0 &&
+                        this.salary.compareTo(emp.getSalary()) == 0
+
+        );
+    }
+
     public Integer getId() {
         return id;
     }
