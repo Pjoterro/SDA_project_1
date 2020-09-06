@@ -3,6 +3,7 @@ package dto;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -13,19 +14,24 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "first_name", nullable = false, length = 100)
     private String firstName;
 
-    @Column(nullable = false, length = 100)
+    @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
     @Enumerated(value = EnumType.STRING)
     private Position position;
 
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
     @Column(scale = 2)
     private BigDecimal salary;
+
+    @OneToMany(mappedBy = "owner")
+    @Column(name = "items")
+    private List<Item> items;
 
     public Employee() {
     }
