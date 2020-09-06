@@ -30,12 +30,12 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, Position position, LocalDate birthDate, BigDecimal salary) {
+    public Employee(String firstName, String lastName, LocalDate birthDate, BigDecimal salary, Position position) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.position = position;
         this.birthDate = birthDate;
         this.salary = salary;
+        this.position = position;
     }
 
     @Override

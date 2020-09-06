@@ -21,6 +21,8 @@ public class NewEmployeeInput {
         LocalDate birthDate = LocalDate.parse(scn.nextLine());
         System.out.print("Wpisz pensje pracownika: ");
         BigDecimal salary = BigDecimal.valueOf(Long.parseLong(scn.nextLine()));
-        return new Employee(firstName, lastName, Position.NONE, birthDate, salary);
+        System.out.print("Wpisz stanowisko pracownika(JUNIOR_DEVELOPER, DEVELOPER, SENIOR_DEVELOPER, NONE, MANAGER): ");
+        Position position = Position.valueOf(scn.nextLine());
+        return new Employee(firstName, lastName, birthDate, salary, position);
     }
 }

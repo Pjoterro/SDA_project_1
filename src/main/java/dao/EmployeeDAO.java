@@ -33,7 +33,7 @@ public class EmployeeDAO {
         return employee;
     }
 
-    public void updateEmployee(int id, Employee emp) { //not implemented yet
+    public void updateEmployee(int id, Employee emp) {
         EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         Employee employee = entityManager.find(Employee.class, id);

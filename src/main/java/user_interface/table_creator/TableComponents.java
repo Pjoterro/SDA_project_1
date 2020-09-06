@@ -36,9 +36,9 @@ public class TableComponents {
         return record.toString();
     }
 
-    public static String generateSeparator(int spaceNumber, String str) {
+    public static String generateSeparator(int charNumber, String str) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < spaceNumber-str.length(); i++) {
+        for (int i = 0; i < charNumber-str.length(); i++) {
             result.append(" ");
         }
         result.append(" | ");

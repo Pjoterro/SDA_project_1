@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeDAOTest {
 
-    Employee employeeTest1 = new Employee("Jan", "Kowalski", Position.JUNIOR_DEVELOPER, LocalDate.now().minusYears(25), BigDecimal.valueOf(5500));
+    Employee employeeTest1 = new Employee("Jan", "Kowalski", LocalDate.now().minusYears(25), BigDecimal.valueOf(5500), Position.JUNIOR_DEVELOPER);
 
 
     @Test
