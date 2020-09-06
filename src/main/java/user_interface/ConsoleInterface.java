@@ -1,6 +1,7 @@
 package user_interface;
 
 import dao.EmployeeDAO;
+import dao.ItemDAO;
 import dto.Employee;
 
 import java.util.Scanner;
@@ -11,11 +12,14 @@ public class ConsoleInterface {
         do {
             Scanner scn = new Scanner(System.in);
             EmployeeDAO employeeDAO = new EmployeeDAO();
+            ItemDAO itemDAO = new ItemDAO();
             System.out.println("1 - Wypisz pierwszych 100 pracownikow\n" +
                     "2 - Dodaj nowego pracownika\n" +
                     "3 - Znajdz pracownika\n" +
                     "4 - Zaktualizuj pracownika\n" +
                     "5 - Usun pracownika\n" +
+                    "6 - Dodaj przedmiot pracownika\n" +
+                    "7 - Wypisz przedmioty w firmie\n" +
                     "0 - Zakoncz program");
             chosenOption = Integer.parseInt(scn.nextLine());
 
@@ -44,6 +48,12 @@ public class ConsoleInterface {
                     chosenOption = Integer.parseInt(scn.nextLine());
                     int parseInt = chosenOption;
                     employeeDAO.deleteEmployee(parseInt);
+                    break;
+                case 6:
+                    itemDAO.addItem(NewItemInput.createNewItem());
+                    break;
+                case 7:
+                    ItemTablePrint.printItems();
                     break;
                 case 0:
                     break;
