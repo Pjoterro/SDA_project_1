@@ -22,4 +22,31 @@ public class EmployeeDAO {
         entityManager.getTransaction().commit();
         entityManager.close();
     }
+
+    public Employee getEmployee(int id) {
+        EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        Employee employee = entityManager.find(Employee.class, id);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        return employee;
+    }
+
+    public void updateEmployee(int id, Employee emp) { //not implemented yet
+        EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        Employee employee = entityManager.find(Employee.class, id);
+//        entityManager.setProperty(...);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+    }
+
+    public void deleteEmployee(int id) {
+        EntityManager entityManager = EntityManagerService.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.remove(id);
+        entityManager.getTransaction().commit();
+        entityManager.close();
+
+    }
 }
